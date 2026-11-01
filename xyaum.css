@@ -1,0 +1,285 @@
+/* ========== Variables & Reset ========== */
+:root {
+    --gold: #e8a020;
+    --bg-hero: #1c1c1c;
+    --bg-about: #2b2b2b;
+    --bg-service: #222222;
+    --text-muted: #bdbdbd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--bg-hero);
+    color: #fff;
+}
+
+/* ========== Hero ========== */
+.hero-container {
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+    background: var(--bg-hero);
+    overflow: hidden;
+}
+
+.hero-left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8%;
+    gap: 10px;
+}
+
+.hero-left-container p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.hero-left-container h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.highlight {
+    color: var(--gold);
+}
+
+.hero-right-container {
+    position: relative;
+}
+
+.hero-right-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right bottom;
+    filter: brightness(0.65) contrast(1.1);
+    /* ເຮັດໃຫ້ຮູບມືດລົງ */
+}
+
+/* ຊັ້ນ gradient ທີ່ຊ້ອນເທິງຮູບ ເພື່ອໃຫ້ຮູບ fade ເຂົ້າກັບພື້ນຫຼັງ */
+.hero-right-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to right, var(--bg-hero) 0%, transparent 50%),
+        linear-gradient(to top, var(--bg-hero) 0%, transparent 30%);
+    pointer-events: none;
+}
+
+/* ========== Section title (ໃຊ້ຮ່ວມກັນ) ========== */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+    color: var(--gold);
+    font-size: 11px;
+}
+
+.divider span {
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+}
+
+/* ========== About ========== */
+.about-section {
+    /* border: 1px solid green; */
+    background: var(--bg-about);
+    padding: 70px 8%;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-left-container {
+    background: #c9ccd3;
+    aspect-ratio: 1 / 1.1;
+    overflow: hidden;
+    box-shadow: -10px 10px 0 #3a3a3a;
+    /* ເງົາເຍື້ອງແບບຕົວຢ່າງ */
+}
+
+.about-left-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.about-hello {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 2px solid var(--gold);
+}
+
+.about-heading {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.about-right-container p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.button-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.btn {
+    padding: 14px 28px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid var(--gold);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #fff;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--gold);
+}
+
+.btn:hover {
+    background: #fff;
+    border-color: #fff;
+    color: var(--bg-about);
+}
+
+/* ========== Services ========== */
+.service-container {
+    /* border: 1px solid green; */
+    background: var(--bg-service);
+    padding: 70px 8%;
+}
+
+.service-right-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ເສັ້ນນອນທີ່ຕັດຜ່ານໄອຄອນ */
+.service-right-container::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.service-card {
+    text-align: center;
+}
+
+.icon-circle {
+    position: relative;
+    /* ເພື່ອໃຫ້ຢູ່ເທິງເສັ້ນ */
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 20px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    background: var(--bg-service);
+    /* ສີດຽວກັບພື້ນ ເພື່ອບັງເສັ້ນ */
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.service-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* ========== Responsive (ຈໍນ້ອຍ/ມືຖື) ========== */
+@media (max-width: 768px) {
+
+    .hero-container,
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-left-container {
+        padding: 40px 8%;
+    }
+
+    .service-right-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .service-right-container::before {
+        display: none;
+    }
+}
