@@ -21,7 +21,7 @@ body {
 
 /* ========== Hero ========== */
 .hero-container {
-    /* border: 1px solid green; */
+    border: 1px solid green;
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 420px;
@@ -111,7 +111,7 @@ body {
 
 /* ========== About ========== */
 .about-section {
-    /* border: 1px solid green; */
+    border: 1px solid green;
     background: var(--bg-about);
     padding: 70px 8%;
 }
